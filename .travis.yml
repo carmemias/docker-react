@@ -1,7 +1,6 @@
-os:
-  - linux
-language:
-  - javascript
+os: linux
+language: node_js
+
 services:
   - docker
 
@@ -10,3 +9,13 @@ before_install:
 
 script:
   - docker run -e CI=true carmemias/docker-react yarn test
+
+# deploy:
+  # provider: elasticbeanstalk
+  # region: "us-west-2"
+  # app: "docker-react"
+  # env: "Docker-env"
+  # bucket_name: ... (the AWS S3 bucket name)
+  # bucket_path: "docker-react" (the AWS S3 bucket path)
+  # on:
+  #   branch: master (only deploy when there are changes to the master branch)
