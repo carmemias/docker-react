@@ -1,4 +1,4 @@
-os: osx
+os: linux
 
 # see https://medium.com/@bezgachev/6-simple-steps-to-automatically-test-and-deploy-your-javascript-app-to-github-pages-c4c32a34bcb1
 language: node_js
@@ -15,6 +15,9 @@ script:
   - docker run -e CI=true carmemias/docker-react yarn test
 
 # deploy:
+  # edge: true
+  # access_key_id: $AWS_ACCESS_KEY
+  # secret_access_key: $AWS_SECRET_KEY
   # provider: elasticbeanstalk
   # region: "us-west-2"
   # app: "docker-react"
